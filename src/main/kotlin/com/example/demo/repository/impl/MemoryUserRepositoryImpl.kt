@@ -4,7 +4,7 @@ import com.example.demo.dto.User
 import com.example.demo.repository.UserRepository
 import org.springframework.stereotype.Repository
 
-@Repository
+// @Repository
 class MemoryUserRepositoryImpl : UserRepository {
 
     override fun findByEmailOrNull(email: String): User? {
@@ -20,9 +20,10 @@ class MemoryUserRepositoryImpl : UserRepository {
     }
 
     override fun create(user: User): User {
-        return user.copy(id = ++i).also {
-            users[it.id] = it
-        }
+        return user
+//        return user.copy(id = ++i).also {
+//            users[it.id] = it
+//        }
     }
 
     override fun delete(id: Long): Boolean {

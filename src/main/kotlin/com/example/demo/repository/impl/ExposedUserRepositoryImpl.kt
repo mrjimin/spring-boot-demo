@@ -8,7 +8,7 @@ import org.jetbrains.exposed.v1.core.eq
 import org.jetbrains.exposed.v1.jdbc.transactions.transaction
 import org.springframework.stereotype.Repository
 
-// @Repository
+@Repository
 class ExposedUserRepositoryImpl : UserRepository {
 
     override fun findByEmailOrNull(email: String): User? {
